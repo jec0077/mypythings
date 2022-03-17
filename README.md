@@ -1,6 +1,6 @@
 # **mypythings**
 
-> #### *mypythings is a directory Python files, classes, and modules developed by Josh Campbell. This directory is meant to shown the develops proficiency in the Python programming language.*
+> #### *mypythings is a directory Python files, classes, and modules developed by Josh Campbell. This directory is meant to showcase the developer's proficiency in the Python programming language.*
 
 ---
 
@@ -36,4 +36,4 @@ _mod_1: This module...
 [^1]: if user wants to generate file without specifying a directory, then file_dir="" && if user wants specify a directory, then string must in with a "/"
 
 ---
-mypythings v.1.1.0  |  author: Josh Campbell  |  last modified: Mar 17 2022
+mypythings v.1.1.1  |  author: Josh Campbell  |  last modified: Mar 17 2022
