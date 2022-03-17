@@ -1,7 +1,7 @@
 # TODO: Header
 __author__ = 'Josh Campbell'
 __email__ = 'adm.jec0077@gmail.com'
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 __status__ = 'Production'
 
 import os
@@ -27,9 +27,9 @@ class fileDirectoryHandling(object):
     method create target directory"""
     try:
         os.mkdir(file_dir)
-        print(" #directory ", file_dir, " created") 
+        print(f" *directory {file_dir} created") 
     except FileExistsError:
-        print(" #directory ", file_dir, " already exists")
+        print(f" *directory {file_dir} already exists")
   
   def read_text_file(file_dir: str, file_name: str):
     """READ TEXT FILE
@@ -45,7 +45,9 @@ class fileDirectoryHandling(object):
       print(f.read())
       f.close()
     except FileNotFoundError:
-      print(" #" + file_name, " does not exist in directory")
+      if file_dir == "":
+        file_dir = "directory"
+      print(f" *{file_name} does not exist in {file_dir}")
     
   def append_text_file(file_dir: str, file_name: str):
     """APPEND TEXT FILE
@@ -62,7 +64,9 @@ class fileDirectoryHandling(object):
       f.write("\n")
       f.close()
     except FileNotFoundError:
-      print(" #" + file_name, " does not exist in directory")
+      if file_dir == "":
+        file_dir = "directory"
+      print(f" *{file_name} does not exist in {file_dir}")
 
   def write_text_file(file_dir: str, file_name: str):
     """WRITE TEXT FILE
@@ -79,7 +83,9 @@ class fileDirectoryHandling(object):
       f.write("\n")
       f.close()
     except FileNotFoundError:
-      print(" #" + file_name, " does not exist in directory")
+      if file_dir == "":
+        file_dir = "directory"
+      print(f" *{file_name} does not exist in {file_dir}")
 
   def create_text_file(file_dir: str, file_name: str):
     """CREATE TEXT FILE
@@ -93,9 +99,9 @@ class fileDirectoryHandling(object):
       file_name_ext = file_name_ext = file_dir + file_name
       f = open(file_name_ext, 'xt')
       f.close()
-      print(" #" + file_name, " created")
+      print(f" *{file_name} created")
     except FileExistsError:
-      print(" #" + file_name, " already exists")
+      print(f" *{file_name} already exists")
 
   def remove_text_file(file_dir: str, file_name: str):
     """REMOVE TEXT FILE
@@ -108,8 +114,11 @@ class fileDirectoryHandling(object):
     try:
       file_name_ext = file_name_ext = file_dir + file_name
       os.remove(file_name_ext)
+      if file_dir == "":
+        file_dir = "directory"
+      print(f" *{file_name} has been removed from {file_dir}")
     except FileNotFoundError:
-      print(" #" + file_name, "does not exist in directory")
+      print(f" *{file_name} does not exist in {file_dir}")
 
 
 
